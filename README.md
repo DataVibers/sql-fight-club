@@ -49,6 +49,14 @@ Create an OpenAI API key and keep it safe.
 
 ---
 
+## Environment Setup
+
+To set up your local development environment, follow:
+
+👉 [Environment Setup Guide](./ENVIRONMENT_SETUP.md)
+
+---
+
 ## 4. Project Structure (proposed)
 
 ```bash
@@ -80,9 +88,3 @@ sql-fight-club/
 ├─ Dockerfile
 ├─ requirements.txt
 └─ README.md
-
-## Environment Setup
-
-To set up your local development environment, follow the full guide here:
-
-👉 [Environment Setup Guide](ENVIRONMENT_SETUP.md)
