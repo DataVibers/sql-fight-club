@@ -81,9 +81,8 @@ sql-fight-club/
 ├─ requirements.txt
 └─ README.md
 
-```markdown
 ## Environment Setup
 
-To set up your local development environment, follow:
+To set up your local development environment, follow the full guide here:
 
 👉 [Environment Setup Guide](ENVIRONMENT_SETUP.md)
