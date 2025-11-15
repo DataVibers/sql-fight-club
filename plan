@@ -1,0 +1,84 @@
+OH THIS IS MAGNIFICENT. Okay, here's how to split this chaos three ways:
+##Person 1: The Database Ringmaster 🦆
+Files: app/db/, app/models/, app/utils/sql_safety.py
+Your mission:
+
+Set up DuckDB with hilariously random data (tables like unicorn_sightings, pizza_toppings_by_mood, failed_startups)
+Build the SQL safety validator (block DROP/DELETE, add timeouts)
+Create the data models for fight logs
+Vibe: You're building the arena. Make the data absurd enough that agents have fun stuff to query
+
+Key deliverables:
+
+duckdb_init.py - creates connection, seeds tables
+sql_safety.py - validates queries are SELECT-only
+fight_log.py - Pydantic models for rounds/results
+
+
+##Person 2: The AI Whisperer 🧠
+Files: app/agents/, app/core/scoring.py
+Your mission:
+
+Build the agent system that generates SQL queries via LLM
+Write prompts that make agents increasingly unhinged ("Your opponent just used 3 CTEs. Embarrass them.")
+Create the complexity/fun scoring system (points for window functions, recursive CTEs, chaos)
+Vibe: You're the agent's voice. Make them trash-talk in SQL comments
+
+Key deliverables:
+
+base_agent.py - SQLAgent interface
+openai_agent.py - LLM integration (Claude API works too if you want!)
+scoring.py - calculates how absurd each query is
+
+
+##Person 3: The Showrunner 🎭
+Files: app/core/fight_manager.py, app/ui/streamlit_app.py, app/config.py
+Your mission:
+
+Build the fight orchestrator (manages rounds, executes queries, handles errors)
+Create the Streamlit UI with live updates
+Add dramatic flair (animated emojis when queries fail, victory screens)
+Vibe: WWE announcer energy. This UI should make people lose their minds
+
+Key deliverables:
+
+fight_manager.py - runs the fight loop, coordinates agents & DB
+streamlit_app.py - the visual spectacle
+config.py - settings like rounds, timeouts, API keys
+
+
+##Git Strategy for This
+Branch names:
+bashgit checkout -b db-arena        # Person 1
+git checkout -b ai-agents       # Person 2  
+git checkout -b fight-ui        # Person 3
+Integration points to sync on:
+
+Person 1 → Person 2: Share the DB schema early so agents know what tables exist
+Person 2 → Person 3: Define the agent interface so fight_manager knows how to call agents
+Person 1 + 3: Agree on the fight_log data structure
+
+##Meet-up moments:
+
+After 1 hour: Quick sync to make sure interfaces match
+After 3 hours: Integration party - wire everything together
+Final hour: Add memes, test with hilarious data, practice your demo
+
+
+##Pro Tips for This Specific Project
+
+Person 1: Seed at least 3-4 weird tables with different data types. Think: timestamps, JSONs, arrays - give the agents ammo
+Person 2: Test your prompts early! The agents should escalate from simple SELECTs to absolute mayhem by round 5
+Person 3: Streamlit has st.empty() for live updates - use it to make queries appear in real-time like a chat feed
+
+##The Demo Script
+When you present, have Person 3 drive:
+
+Click "Start Fight"
+Watch Agent A write a basic query
+Agent B responds with window functions
+By round 4 they're doing recursive CTEs about fictional unicorn genealogy
+Round 5: someone's query times out and Streamlit displays "💀 FATALITY"
+
+The room will lose it.
+Now go forth and make SQL agents roast each other. First rule of SQL Fight Club: we DO talk about SQL Fight Club.
