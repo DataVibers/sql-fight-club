@@ -9,9 +9,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # API Configuration
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
-OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4")
-OPENAI_TEMPERATURE = float(os.getenv("OPENAI_TEMPERATURE", "0.9"))
+COHERE_API_KEY = os.getenv("COHERE_API_KEY", "")
+COHERE_MODEL = os.getenv("COHERE_MODEL", "command")
+COHERE_TEMPERATURE = float(os.getenv("COHERE_TEMPERATURE", "0.9"))
 
 # Fight Configuration
 DEFAULT_ROUNDS = 5
